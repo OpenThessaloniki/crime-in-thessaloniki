@@ -4,8 +4,11 @@
         <title>Crime SKG v0.5</title>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-        <script src="lib/jquery.csv.min.js"></script>
-        <script src="lib/sugar.min.js"></script>
+        <script src="js/jquery.csv.min.js"></script>
+        <script src="js/sugar.min.js"></script>
+        <script src="js/crime.skg.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="css/style.css" media="screen" />
 
         <script type="text/javascript">
             $.ajax({
@@ -16,23 +19,17 @@
                 },
                 dataType: "text",
                 complete: function () {
-                    test(data);
+                    res = data.findAll({year: "2014"});
                 }
             });
 
-            function test(data) {
-
-//                if( Object.prototype.toString.call( data ) === '[object Array]' ) {
-//                    alert( 'Array!' );
-//                }
-                yo = data.findAll({crimeid: "1"});
-                return yo;
-            }
         </script>
     </head>
     <body>
         <h1>This is Crime SKG Project</h1>
         <h3>Version: 0.5</h3>
         <h3>Started at: 10 April, 2015</h3>
+        <div style="height: 50px;"></div>
+        <script type="text/javascript">get_years_menu();</script>
     </body>
 </html>

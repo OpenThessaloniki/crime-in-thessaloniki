@@ -19,7 +19,9 @@
                 },
                 dataType: "text",
                 complete: function () {
-                    res = data.findAll({year: "2014"});
+                    //res = data.findAll({year: "2014"}).sortBy("level0");
+                    res = data.findAll({crimeid: "1"});
+                    m = res.max("done");
                 }
             });
 
@@ -30,6 +32,9 @@
         <h3>Version: 0.5</h3>
         <h3>Started at: 10 April, 2015</h3>
         <div style="height: 50px;"></div>
-        <script type="text/javascript">get_years_menu();</script>
+
+        <h2>Stats per Crime</h2>
+        <script type="text/javascript">get_crime_types();</script>
+        <!-- <script type="text/javascript">get_years_menu();</script> -->
     </body>
 </html>
